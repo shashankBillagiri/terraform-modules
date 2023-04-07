@@ -1,0 +1,52 @@
+1) terraform init - goes through the configurations and downloads the necessary plugins required for the provider:
+example: if you are using AWS, this command downloads all the necessary plugins required.
+
+you see the below when you use init command:
+
+Initializing the backend...
+
+Initializing provider plugins...
+- Reusing previous version of hashicorp/aws from the dependency lock file
+- Using previously-installed hashicorp/aws v4.62.0
+Terraform has been successfully initialized!
+
+
+2) terraform plan
+
+when you use this you can see what are all the changes you are going to make to your infrastructure.
+
+if you do not have any changes for your configurations and try running the above  you see the below
+
+
+      No changes. Your infrastructure matches the configuration.
+
+3) terrafrom apply
+
+interacts with AWS api and creates or modifies  the necessary infrastructure as per our changes.
+
+terraform apply --auto-approve  (skips the step of typing yes when we use terrafrom apply command)
+
+
+4) terraform destroy
+if you use this by default terraform destroys entire infrastructure.
+you will see the below pop up
+
+Terraform will destroy all your managed infrastructure, as shown above.
+There is no undo. Only 'yes' will be accepted to confirm.
+
+
+>> if you want to destroy a particular  resource you will have extra parameters.
+terraform destroy --target aws_instance.ec2Instance
+
+
+
+
+Miscellaneous:
+
+a) Terraform state file:
+Terraform stores information about your infrastructure in a state file.
+This state file keeps track of resources created by your configuration and maps them to real-world resources.
+By default, a backup of your state file is written to terraform. tfstate.backup in case the state file is lost or corrupted to simplify recovery. 
+The state file is used by Terraform to keep track of resources and metadata information about your infrastructure
+
+b) The order in which you create resources doesn't amtter in Terraform.
