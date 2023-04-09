@@ -49,4 +49,31 @@ This state file keeps track of resources created by your configuration and maps 
 By default, a backup of your state file is written to terraform. tfstate.backup in case the state file is lost or corrupted to simplify recovery. 
 The state file is used by Terraform to keep track of resources and metadata information about your infrastructure
 
-b) The order in which you create resources doesn't amtter in Terraform.
+b) The order in which you create resources doesn't amtter in Terraform. (There are few Exceptions)
+
+c) User data is a helpful tool to get rid of routine operations after server provisioning.
+ You can get a ready-to-use server with additional software installed and configured according to your specification. 
+ The feature is built upon the cloud-init package for Linux operating systems. Cloud-init serves for performing operations while server's initialization, 
+ its behavior is defined by a special type of content - user data. To manage post-install operations via Terraform,
+  we have implemented the "user_data" argument in the serverscom_dedicated_server resource.
+
+d) Basically <<EOF tells the shell that you are going to enter a multiline string until the "tag" EOF
+
+
+
+Practise Project:
+
+# 1. Create vpc -
+# 2. Create Internet Gateway - within the above vpc we are designating an internet gateway so that we can actually sent traffic out to the internet because we 
+# do want to assign a public IP adress so that anybody in the world can reach it.
+# 3. Create Custom Route Table - Custom route table is A route table that you create for your VPC. 
+#Destination—The range of IP addresses where you want traffic to go (destination CIDR). 
+#For example, an external corporate network with the CIDR 172.16.0.0/12 .
+# 4. Create a Subnet - Virtual Private Cloud (VPC) networks are global resources. Each VPC network consists of one or more IP address range called subnets.
+# Subnets are regional resources, and have IP address ranges associated with them.
+# 5. Associate subnet with Route Table
+# 6. Create Security Group to allow port 22,80,443 - Security Group is responsible to enable what kind of traffic you want to get to your Ec2 Instances
+# ex: if its a webserver we will allow port 80 and port 443 for http and https traffic respectively. We will also allow port 22 so that we can ssh in to it.
+# 7. Create a network interface with an ip in the subnet that was created in step 4
+# 8. Assign an elastic IP to the network interface created in step 7 - This is a publicIp  so that anyone on the internet can access it.
+# 9. Create Ubuntu server and install/enable apache2
