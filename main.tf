@@ -149,3 +149,47 @@ resource "aws_instance" "PractiseEc2Instance" {
                sudo bash -c 'echo Helloworld> /var/www/html/index.html'
                EOF
 }
+
+output "PractiseServerPublicIP" {
+
+  value = aws_eip.PractiseElasticIp.public_ip
+  
+}
+
+
+output "serverPrivateIP" {
+  value = aws_eip.PractiseElasticIp.private_ip
+
+}
+
+output "serverPrivateId" {
+  value = aws_eip.PractiseElasticIp.id
+
+}
+
+
+
+
+resource "aws_vpc" "SampleVpc" {
+  cidr_block = var.subnet_prefix
+}
+
+
+resource "aws_subnet" "SampleSubnet" {
+  vpc_id     = aws_vpc.SampleVpc.id
+  cidr_block = "10.0.1.0/24"
+}
+
+
+resource "aws_subnet" "SampleSubnet1" {
+  vpc_id     = aws_vpc.SampleVpc.id
+  cidr_block = var.sample_subnet[1]
+}
+
+resource "aws_subnet" "SampleSubnet2" {
+  vpc_id     = aws_vpc.SampleVpc.id
+  cidr_block = var.sample_subnet1[1].cidr
+  tags = {
+    "name" = var.sample_subnet1[1].name
+  }
+}
