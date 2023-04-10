@@ -39,6 +39,27 @@ There is no undo. Only 'yes' will be accepted to confirm.
 terraform destroy --target aws_instance.ec2Instance
 
 
+4) terraform validate      Check whether the configuration is valid
+
+
+5) just hit terraform command it will show you the list of terraform commands available.
+
+
+
+Terraform State Commands
+
+
+1) terraform state  - lists all the sub commands of terraform state.
+  ex: Subcommands:
+        list     List resources in the state
+        mv       Move an item in the state
+        pull     Pull current state and output to stdout
+        push     Update remote state from a local state file
+        replace-provider    Replace provider in the state
+        rm       Remove instances from the state
+        show      Show a resource in the state
+
+
 
 
 Miscellaneous:
