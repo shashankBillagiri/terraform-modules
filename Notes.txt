@@ -36,13 +36,17 @@ There is no undo. Only 'yes' will be accepted to confirm.
 
 
 >> if you want to destroy a particular  resource you will have extra parameters.
-terraform destroy --target aws_instance.ec2Instance
+terraform destroy -target aws_instance.ec2Instance
+
+TAREGT RESOURCES: 
+terraform destroy  -target aws_eip.PractiseElasticIp
+terraform apply  -target aws_eip.PractiseElasticIp
 
 
-4) terraform validate      Check whether the configuration is valid
+5) terraform validate      Check whether the configuration is valid
 
 
-5) just hit terraform command it will show you the list of terraform commands available.
+6) just hit terraform command it will show you the list of terraform commands available.
 
 
 
@@ -60,6 +64,52 @@ Terraform State Commands
         show      Show a resource in the state
 
 
+Terraform Output:
+
+instead of using terraform state show to get the details of the AWS resource, we can print the details when we do terraform apply.
+
+Syntax:
+
+output "name" {
+  value = aws_eip.PractiseElasticIp.public_ip
+}
+
+The above will run once you run terraform apply command.
+
+if you want to see all the outputs we can also run terraform output command.
+
+instead of using terraform apply you can use terraform refresh command  so that we can see the outputs. Since sometimes terraform apply could potentially
+ change the configurations and  thats not desired in production.
+
+
+
+ Terraform variables:
+
+ 1)     Syntax:
+
+        variable "subnet_prefix" {
+              # the below three arguments are completely optional.
+               description = "some description"
+               default = 
+               type
+               }
+
+
+2) setting value to a variabl ethrough command line.
+         if we do not set any value for the variable it will prompt us to give as input while doing terraform apply.
+
+         we can use the below command to set the value for the variable
+
+        terraform apply -var subnet_prefix= "10.0.0.0/16"
+
+
+3) terraform looks for a file called terraform.tfvars where it looks for the values set for any variable. 
+   This will not prompt us to give values when we are doing terraform apply.
+
+4) If we want to terraform to refer to a particular files for variable values
+   
+          terraform apply -var-file example.tfvars
+5) in .tf file we define a variable and in .tfvars file we assign a value.
 
 
 Miscellaneous:
