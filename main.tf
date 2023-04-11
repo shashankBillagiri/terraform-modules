@@ -193,3 +193,32 @@ resource "aws_subnet" "SampleSubnet1" {
 #     "name" = var.sample_subnet1[1].name
 #   }
 # }
+
+
+# using DataSource
+
+# data "aws_vpc" "PractiseDataSource" {
+#    default = true
+#   }
+
+
+# output "PractiseDataSourceVpcId" {
+#   value = data.aws_vpc.PractiseDataSource
+  
+# }
+
+
+data "aws_vpc" "getdefaultVpc" {
+  filter {
+    name   = "tag:Name"
+    values = ["defaultVpc"]
+  }
+
+}
+
+
+output "printdefaultVpcDetails" {
+
+  value = data.aws_vpc.getdefaultVpc
+
+}
