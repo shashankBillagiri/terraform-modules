@@ -112,6 +112,11 @@ instead of using terraform apply you can use terraform refresh command  so that 
 5) in .tf file we define a variable and in .tfvars file we assign a value.
 
 
+Data Source:
+
+1)  Data sources allow Terraform to use information defined outside of Terraform, defined by another separate Terraform configuration, or modified by functions.
+
+
 Miscellaneous:
 
 a) Terraform state file:
@@ -147,4 +152,4 @@ Practise Project:
 # ex: if its a webserver we will allow port 80 and port 443 for http and https traffic respectively. We will also allow port 22 so that we can ssh in to it.
 # 7. Create a network interface with an ip in the subnet that was created in step 4
 # 8. Assign an elastic IP to the network interface created in step 7 - This is a publicIp  so that anyone on the internet can access it.
-# 9. Create Ubuntu server and install/enable apache2
+# 9. Create Ubuntu server and install/enable apache2.

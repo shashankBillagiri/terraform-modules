@@ -177,7 +177,7 @@ resource "aws_vpc" "SampleVpc" {
 
 resource "aws_subnet" "SampleSubnet" {
   vpc_id     = aws_vpc.SampleVpc.id
-  cidr_block = "10.0.1.0/24"
+  cidr_block = "10.0.0.0/24"
 }
 
 
@@ -186,10 +186,10 @@ resource "aws_subnet" "SampleSubnet1" {
   cidr_block = var.sample_subnet[1]
 }
 
-resource "aws_subnet" "SampleSubnet2" {
-  vpc_id     = aws_vpc.SampleVpc.id
-  cidr_block = var.sample_subnet1[1].cidr
-  tags = {
-    "name" = var.sample_subnet1[1].name
-  }
-}
+# resource "aws_subnet" "SampleSubnet2" {
+#   vpc_id     = aws_vpc.SampleVpc.id
+#   cidr_block = var.sample_subnet1[1].cidr_block
+#   tags = {
+#     "name" = var.sample_subnet1[1].name
+#   }
+# }
