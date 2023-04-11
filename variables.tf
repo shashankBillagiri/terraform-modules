@@ -15,8 +15,8 @@ variable "sample_subnet" {
 }
 
 
-variable "sample_subnet1" {
+# variable "sample_subnet1" {
 
-    description = "cidr block value for vpc2"
-    type = list
-}
+#     description = "cidr block value for vpc2"
+#     type = list
+# }
