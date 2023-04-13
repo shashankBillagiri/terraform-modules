@@ -222,14 +222,6 @@ output "printdefaultVpcDetails" {
   value = data.aws_vpc.getdefaultVpc
 }
 
-# caller_Identity
-
-data "aws_caller_identity" "current" {}
-
-output "account_id" {
-  value = data.aws_caller_identity.current.account_id
-}
-
 
 # caller_Identity
 
