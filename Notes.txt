@@ -137,6 +137,15 @@ d) Basically <<EOF tells the shell that you are going to enter a multiline strin
 
 
 
+
+Local Values
+
+
+
+Terraform AWS secret manager valueFrom syntax
+
+
+
 Practise Project:
 
 # 1. Create vpc -
