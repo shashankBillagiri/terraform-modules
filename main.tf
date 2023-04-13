@@ -1,5 +1,6 @@
 provider "aws" {
     region = "us-east-1"
+
 }
 
 # resource "<provider>_<resource_type>" "name" {
@@ -218,9 +219,7 @@ data "aws_vpc" "getdefaultVpc" {
 
 
 output "printdefaultVpcDetails" {
-
   value = data.aws_vpc.getdefaultVpc
-
 }
 
 # caller_Identity
