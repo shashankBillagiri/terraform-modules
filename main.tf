@@ -223,19 +223,11 @@ output "printdefaultVpcDetails" {
 }
 
 
-# caller_Identity
 
 data "aws_caller_identity" "current" {}
 
-<<<<<<< HEAD
-=======
-}
 
-# caller_Identity
 
-data "aws_caller_identity" "current" {}
-
->>>>>>> adbc312... Aws_caller_identity
 output "account_id" {
   value = data.aws_caller_identity.current.account_id
 }
