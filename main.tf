@@ -1,5 +1,7 @@
 provider "aws" {
     region = "us-east-1"
+  
+
 }
 
 # resource "<provider>_<resource_type>" "name" {
