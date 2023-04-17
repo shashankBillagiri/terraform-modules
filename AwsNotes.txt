@@ -1,0 +1,16 @@
+1) User :
+   Role : A way of providing aws credentials to Aws services.
+   Policies :
+
+
+
+2) AWS STS Assume role:
+
+STS is AWS service which is used for getting temporary credentials.
+
+STS assume role returns  a set of temporary security credentials that you can use to access AWS resources.
+These temporary credentials consist of an access key ID, a secret access key, and a security token.
+
+3) aws Configure - to set up local CLI to access AWS console.
+
+
