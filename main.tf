@@ -1,11 +1,5 @@
 provider "aws" {
     region = "us-east-1"
-    
-
-    
-
-
-
 }
 
 # resource "<provider>_<resource_type>" "name" {
@@ -245,8 +239,4 @@ output "caller_user" {
   value = data.aws_caller_identity.current.user_id
 }
 
-
-output "caller_user" {
-  value = data.aws_caller_identity.current.user_id
-}
 

@@ -1,6 +1,6 @@
 1) User :
    Role : A way of providing aws credentials to Aws services.
-   Policies :
+   Policies : Permissions to access certain aws resources.
 
 
 
