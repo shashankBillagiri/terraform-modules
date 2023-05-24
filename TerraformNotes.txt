@@ -1,4 +1,6 @@
-1) terraform init - goes through the configurations and downloads the necessary plugins required for the provider:
+Terraform basic commands :
+
+1) Terraform init - goes through the configurations and downloads the necessary plugins required for the provider:
 example: if you are using AWS, this command downloads all the necessary plugins required.
 
 you see the below when you use init command:
@@ -11,7 +13,7 @@ Initializing provider plugins...
 Terraform has been successfully initialized!
 
 
-2) terraform plan
+2) Terraform plan
 
 when you use this you can see what are all the changes you are going to make to your infrastructure.
 
@@ -20,14 +22,14 @@ if you do not have any changes for your configurations and try running the above
 
       No changes. Your infrastructure matches the configuration.
 
-3) terrafrom apply
+3) Terrafrom apply
 
 interacts with AWS api and creates or modifies  the necessary infrastructure as per our changes.
 
 terraform apply --auto-approve  (skips the step of typing yes when we use terrafrom apply command)
 
 
-4) terraform destroy
+4) Terraform destroy
 if you use this by default terraform destroys entire infrastructure.
 you will see the below pop up
 
@@ -43,7 +45,7 @@ terraform destroy  -target aws_eip.PractiseElasticIp
 terraform apply  -target aws_eip.PractiseElasticIp
 
 
-5) terraform validate      Check whether the configuration is valid
+5) Terraform validate      Check whether the configuration is valid
 
 
 6) just hit terraform command it will show you the list of terraform commands available.
@@ -95,7 +97,7 @@ instead of using terraform apply you can use terraform refresh command  so that 
                }
 
 
-2) setting value to a variabl ethrough command line.
+2) setting value to a variable through command line.
          if we do not set any value for the variable it will prompt us to give as input while doing terraform apply.
 
          we can use the below command to set the value for the variable
@@ -140,9 +142,34 @@ d) Basically <<EOF tells the shell that you are going to enter a multiline strin
 
 Local Values
 
+1) synonymous to local variables in Programming.
+
+example:   shell = ["crunchy", "soft"]
+  tags = {
+    number = 42
+    item   = "towel"
+    planet = "Earth"
+    poetry = "Vogon"
+  }
+  meaning_of_life = "What is 6 x 7? ${local.tags["number"]}"
+
+
+
+
+
+Terraform console:
+
+What is a terraform console?
+command: Terraform console
+The Terraform console is an interpreter that you can use to evaluate Terraform expressions and explore your Terraform project's state
+
+example: if yo want to see the local values, got to terraform console and do local.shell
+if you want to see the value of a variable ---var.sample_subnet
 
 
 Terraform AWS secret manager valueFrom syntax
+
+
 
 
 
