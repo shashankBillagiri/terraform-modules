@@ -1,0 +1,3 @@
+Difference between Locals and Variables?
+modules in Terraform?
+outputs.tf file in Terraform?
