@@ -17,8 +17,8 @@ variable "sample_subnet" {
 variable "app_name" {
 
     description = "name of the application"
-    #type = string
-    default = "terraform-modules"
+    type = string
+    default = terraform-modules
 }
 
 
