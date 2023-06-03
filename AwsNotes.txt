@@ -1,4 +1,6 @@
-1) User :
+1) IAM: To Manage Access to AWS resources
+
+   User :
    Role : A way of providing aws credentials to Aws services.
    Policies : Permissions to access certain aws resources.
 
@@ -12,5 +14,9 @@ STS assume role returns  a set of temporary security credentials that you can us
 These temporary credentials consist of an access key ID, a secret access key, and a security token.
 
 3) aws Configure - to set up local CLI to access AWS console.
+
+sample aws commands :
+
+aws iam list-users : lists all the users
 
 
