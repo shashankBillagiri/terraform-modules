@@ -5,6 +5,15 @@
    Policies : Permissions to access certain aws resources.
 
 
+   -- AWS Organization - Central Management for multiple AWS Accounts
+   AWS Organizations helps you centrally manage and govern your environment as you grow and scale your AWS resources.
+   Using AWS Organizations, you can create accounts and allocate resources, group accounts to organize your workflows, 
+   apply policies for governance, and simplify billing by using a single payment method for all of your accounts. 
+   AWS Organizations is integrated with other AWS services so you can define central configurations, security mechanisms, audit requirements,
+   and resource sharing across accounts in your organization. AWS Organizations is available to all AWS customers at no additional charge.
+
+
+
 
 2) AWS STS Assume role:
 
@@ -13,7 +22,11 @@ STS is AWS service which is used for getting temporary credentials.
 STS assume role returns  a set of temporary security credentials that you can use to access AWS resources.
 These temporary credentials consist of an access key ID, a secret access key, and a security token.
 
-3) aws Configure - to set up local CLI to access AWS console.
+3) aws Configure - to set up local CLI to access AWS console. // Before this Download amazon CLI and check for version using aws --version
+
+sample aws commands :
+
+aws iam list-users : lists all the users
 
 sample aws commands :
 
