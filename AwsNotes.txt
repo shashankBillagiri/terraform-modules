@@ -1,8 +1,23 @@
 1) IAM: To Manage Access to AWS resources
 
-   User :
-   Role : A way of providing aws credentials to Aws services.
-   Policies : Permissions to access certain aws resources.
+   Users : are people within your organization and can be grouped.
+
+   Role : A way of providing aws credentials to Aws services. Roles are not intended to be used by physical people.
+   roles are entities you create and assign specific permissions to that allow trusted identities such as workforce identities and applications to perform actions in AWS.
+   When your trusted identities assume IAM roles, they are granted only the permissions scoped by those IAM roles.
+
+   Example: we can have a role attached to an ec2 instance, 
+            we can attach a role to AWS Lamnbda.
+
+
+    you have an ec2 instance and if you connect to it and run a sample command like  - aws iam list users 
+    we get access denied because we did not configure aws credentials for this instance to interact with aws. but we cannot actually configure aws credentials on an 
+    instance because anyon ewho has access to the instance can get those credentials. 
+    So for that we can create a role which has a policy to access IAM and attach the role to the Ec2 instance.
+
+
+   Policies : Users or Groups can be assigned JSON documnets called policies. These policies define the permissions of the users.
+   Permissions to access certain aws resources.
 
 
    -- AWS Organization - Central Management for multiple AWS Accounts
@@ -11,6 +26,11 @@
    apply policies for governance, and simplify billing by using a single payment method for all of your accounts. 
    AWS Organizations is integrated with other AWS services so you can define central configurations, security mechanisms, audit requirements,
    and resource sharing across accounts in your organization. AWS Organizations is available to all AWS customers at no additional charge.
+
+
+
+
+   Permission Boundary:
 
 
 
