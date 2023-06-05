@@ -55,16 +55,22 @@ terraform apply  -target aws_eip.PractiseElasticIp
 Terraform State Commands
 
 
-1) terraform state  - lists all the sub commands of terraform state.
+1) terraform state  - 
+ Terraform logs information about the resources it has created in a state file. 
+ This enables Terraform to know which resources are under its control and when to update and destroy them.
+
+lists all the sub commands of terraform state.
   ex: Subcommands:
         list     List resources in the state
         mv       Move an item in the state
         pull     Pull current state and output to stdout
+        ex:  terraform state pull 'data.aws_vpc.getdefaultVpc'
+        
         push     Update remote state from a local state file
         replace-provider    Replace provider in the state
         rm       Remove instances from the state
         show      Show a resource in the state
-
+        ex: terraform state show 'data.aws_vpc.getdefaultVpc'
 
 Terraform Output:
 

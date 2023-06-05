@@ -2,7 +2,7 @@
 
    Users : are people within your organization and can be grouped.
 
-   Role : A way of providing aws credentials to Aws services. Roles are not intended to be used by physical people.
+   Role : A way of providing aws credentials to Aws services.
    roles are entities you create and assign specific permissions to that allow trusted identities such as workforce identities and applications to perform actions in AWS.
    When your trusted identities assume IAM roles, they are granted only the permissions scoped by those IAM roles.
 
@@ -15,9 +15,23 @@
     instance because anyon ewho has access to the instance can get those credentials. 
     So for that we can create a role which has a policy to access IAM and attach the role to the Ec2 instance.
 
+   IAM role session:
+
+    IAM roles help you grant access to AWS services and resources by using dynamically generated short-term credentials. 
+    Each instantiation of an IAM role, and the associated set of short-term credentials, is known as an IAM role session. 
+    Each IAM role session is uniquely identified by a role session name.
+
 
    Policies : Users or Groups can be assigned JSON documnets called policies. These policies define the permissions of the users.
    Permissions to access certain aws resources.
+
+   Identity Based Policies
+   Resource based policies
+   Permission Boundary
+
+   Effective permissions are the permissions common in all the baove 3 policies
+
+
 
 
    -- AWS Organization - Central Management for multiple AWS Accounts
@@ -30,12 +44,19 @@
 
 
 
-   Permission Boundary:
+   Permission Boundary: The permissions boundary for an IAM entity (user or role) sets the maximum permissions that the entity can have.
+    This can change the effective permissions for that user or role. 
+    The effective permissions for an entity are the permissions that are granted by all the policies that affect the user or role. 
+    Within an account, the permissions for an entity can be affected by identity-based policies, resource-based policies, permissions boundaries, Organizations SCPs,
+   or session policies. 
 
 
 
 
 2) AWS STS Assume role:
+
+Security Token Service (STS)
+STS is used to create and provide trusted users with temporary security credentials that can control access to your AWS resources.
 
 STS is AWS service which is used for getting temporary credentials.
 
@@ -48,8 +69,5 @@ sample aws commands :
 
 aws iam list-users : lists all the users
 
-sample aws commands :
-
-aws iam list-users : lists all the users
 
 

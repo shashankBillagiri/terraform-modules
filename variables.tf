@@ -18,7 +18,7 @@ variable "app_name" {
 
     description = "name of the application"
     type = string
-    default = terraform-modules
+    default = "terraform-modules"
 }
 
 
