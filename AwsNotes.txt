@@ -15,11 +15,16 @@
     instance because anyon ewho has access to the instance can get those credentials. 
     So for that we can create a role which has a policy to access IAM and attach the role to the Ec2 instance.
 
+
    IAM role session:
 
     IAM roles help you grant access to AWS services and resources by using dynamically generated short-term credentials. 
     Each instantiation of an IAM role, and the associated set of short-term credentials, is known as an IAM role session. 
     Each IAM role session is uniquely identified by a role session name.
+
+
+
+    Trust Relationships:
 
 
    Policies : Users or Groups can be assigned JSON documnets called policies. These policies define the permissions of the users.
@@ -53,7 +58,12 @@
 
 
 
-2) AWS STS Assume role:
+2) IAM Identity center (successor to AWS Single Sign-On)
+
+
+
+
+3) AWS STS Assume role:
 
 Security Token Service (STS)
 STS is used to create and provide trusted users with temporary security credentials that can control access to your AWS resources.
@@ -63,11 +73,21 @@ STS is AWS service which is used for getting temporary credentials.
 STS assume role returns  a set of temporary security credentials that you can use to access AWS resources.
 These temporary credentials consist of an access key ID, a secret access key, and a security token.
 
-3) aws Configure - to set up local CLI to access AWS console. // Before this Download amazon CLI and check for version using aws --version
+4) aws Configure - to set up local CLI to access AWS console. // Before this Download amazon CLI and check for version using aws --version
 
 sample aws commands :
 
 aws iam list-users : lists all the users
+
+
+
+sample Error Message when a user doesnt have access to a Service:
+
+Couldn't retrieve queues.
+Error code: AccessDenied. Error message: User: arn:aws:iam::524195336295:user/Tfrom is not authorized to perform: sqs:listqueues on
+ resource: arn:aws:sqs:us-east-1:524195336295:because no identity-based policy allows the sqs:listqueues action
+
+
 
 
 
