@@ -51,20 +51,31 @@ terraform apply  -target aws_eip.PractiseElasticIp
 6) just hit terraform command it will show you the list of terraform commands available.
 
 
+7) terraform fmt - format code as per HCL canonical standard.
+
+8) terraform -install-autocomplete - Setup tab auto-completion, requires logging back in
+
+
 
 Terraform State Commands
 
 
-1) terraform state  - lists all the sub commands of terraform state.
+1) terraform state  - 
+ Terraform logs information about the resources it has created in a state file. 
+ This enables Terraform to know which resources are under its control and when to update and destroy them.
+
+lists all the sub commands of terraform state.
   ex: Subcommands:
         list     List resources in the state
         mv       Move an item in the state
         pull     Pull current state and output to stdout
+        ex:  terraform state pull 'data.aws_vpc.getdefaultVpc'
+
         push     Update remote state from a local state file
         replace-provider    Replace provider in the state
         rm       Remove instances from the state
         show      Show a resource in the state
-
+        ex: terraform state show 'data.aws_vpc.getdefaultVpc'
 
 Terraform Output:
 
@@ -152,6 +163,17 @@ example:   shell = ["crunchy", "soft"]
     poetry = "Vogon"
   }
   meaning_of_life = "What is 6 x 7? ${local.tags["number"]}"
+
+
+
+
+  Terraform workspace:
+
+  1) Use the TERRAFORM WORKSPACE LIST, TERRAFORM WORKSPACE NEW, and TERRAFORM WORKSPACE DELETE commands to manage the available workspaces in 
+  the current working directory.Use the TERRAFORM WORKSPACE SELECT command to change the currently selected workspace. For a given working directory, 
+  you can only select one workspace at a time. Most Terraform commands only interact with the currently selected workspace.
+  Example: 
+  terraform workspace list -  lists the various workspaces. by default we are in a workspace called  default. 
 
 
 

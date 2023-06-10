@@ -8,7 +8,7 @@ locals {
   }
   meaning_of_life = "What is 6 x 7? ${local.tags["number"]}"
 
-   # using a variable in Local
+  # using a variable in Local
 
-  ApplicationName = "${var.app_name}"
+  ApplicationName = var.app_name
 }
