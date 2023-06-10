@@ -1,8 +1,8 @@
 1) IAM: To Manage Access to AWS resources
 
-   Users : are people within your organization and can be grouped.
+   a) Users : are people within your organization and can be grouped.
 
-   Role : A way of providing aws credentials to Aws services.
+   b) Role : A way of providing aws credentials to Aws services.
    roles are entities you create and assign specific permissions to that allow trusted identities such as workforce identities and applications to perform actions in AWS.
    When your trusted identities assume IAM roles, they are granted only the permissions scoped by those IAM roles.
 
@@ -16,7 +16,7 @@
     So for that we can create a role which has a policy to access IAM and attach the role to the Ec2 instance.
 
 
-   IAM role session:
+   c) IAM role session:
 
     IAM roles help you grant access to AWS services and resources by using dynamically generated short-term credentials. 
     Each instantiation of an IAM role, and the associated set of short-term credentials, is known as an IAM role session. 
@@ -24,10 +24,10 @@
 
 
 
-    Trust Relationships:
+   d) Trust Relationships:
 
 
-   Policies : Users or Groups can be assigned JSON documnets called policies. These policies define the permissions of the users.
+   e) Policies : Users or Groups can be assigned JSON documnets called policies. These policies define the permissions of the users.
    Permissions to access certain aws resources.
 
    Identity Based Policies
