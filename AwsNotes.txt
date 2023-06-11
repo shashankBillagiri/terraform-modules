@@ -1,8 +1,10 @@
 1) IAM: To Manage Access to AWS resources
 
-   Users : are people within your organization and can be grouped.
 
-   Role : A way of providing aws credentials to Aws services.
+   a) Users : are people within your organization and can be grouped.
+
+   b) Role : A way of providing aws credentials to Aws services.
+
    roles are entities you create and assign specific permissions to that allow trusted identities such as workforce identities and applications to perform actions in AWS.
    When your trusted identities assume IAM roles, they are granted only the permissions scoped by those IAM roles.
 
@@ -16,13 +18,32 @@
     So for that we can create a role which has a policy to access IAM and attach the role to the Ec2 instance.
 
 
-   IAM role session:
+   c) IAM role session:
 
     IAM roles help you grant access to AWS services and resources by using dynamically generated short-term credentials. 
     Each instantiation of an IAM role, and the associated set of short-term credentials, is known as an IAM role session. 
     Each IAM role session is uniquely identified by a role session name.
 
 
+   d) Trust Relationships:
+
+
+   e) Policies : Users or Groups can be assigned JSON documnets called policies. These policies define the permissions of the users.
+   Permissions to access certain aws resources.
+   we can assign an existing policy or create a new inline policy.
+
+   Identity Based Policies - These are policies or permissions to an user.
+       ex : User John is attached with AmazonS3FullAccess
+   
+   Resource based policies
+   are the policies attached to an aws resource.
+
+   for example We creata an S3 bucket and attach bucket policy to  allow access to only a user called  Smith, 
+   even though john has identity level policy to access S3, since he is restricted in bucket policy . John will not be able to access the sample S3 bucket.
+   Permission Boundary
+  
+   In the above example If there is an user who has an admin access , and was restricted to access the S3 on the bucket policy,
+   then the user will be explicitly denied access to the S3
 
     Trust Relationships:
 
