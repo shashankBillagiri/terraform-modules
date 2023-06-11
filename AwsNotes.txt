@@ -1,8 +1,10 @@
 1) IAM: To Manage Access to AWS resources
 
+
    a) Users : are people within your organization and can be grouped.
 
    b) Role : A way of providing aws credentials to Aws services.
+
    roles are entities you create and assign specific permissions to that allow trusted identities such as workforce identities and applications to perform actions in AWS.
    When your trusted identities assume IAM roles, they are granted only the permissions scoped by those IAM roles.
 
@@ -21,7 +23,6 @@
     IAM roles help you grant access to AWS services and resources by using dynamically generated short-term credentials. 
     Each instantiation of an IAM role, and the associated set of short-term credentials, is known as an IAM role session. 
     Each IAM role session is uniquely identified by a role session name.
-
 
 
    d) Trust Relationships:
@@ -44,6 +45,15 @@
    In the above example If there is an user who has an admin access , and was restricted to access the S3 on the bucket policy,
    then the user will be explicitly denied access to the S3
 
+    Trust Relationships:
+
+
+   Policies : Users or Groups can be assigned JSON documnets called policies. These policies define the permissions of the users.
+   Permissions to access certain aws resources.
+
+   Identity Based Policies
+   Resource based policies
+   Permission Boundary
 
    Effective permissions are the permissions common in all the baove 3 policies
 
